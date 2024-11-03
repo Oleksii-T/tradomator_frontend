@@ -1,14 +1,6 @@
 import { defineStore } from 'pinia';
-import type { ILoginFormData } from '~/types/auth-types';
 import { ApiStatusEnum } from '~/constants/api-statuses';
-
-export interface IUserStore {
-  id?: string | null;
-  first_name: string | null;
-  last_name: string | null;
-  email: string | null;
-  token: string | null;
-}
+import type { ILoginFormData, IUserStore } from '~/types/auth-types';
 
 export const useUserStore = defineStore('user', {
   state: (): IUserStore => ({
@@ -29,7 +21,7 @@ export const useUserStore = defineStore('user', {
         this.$state.last_name = data.value?.data?.user?.last_name || null;
         this.$state.id = data.value?.data?.user?.id || null;
         this.$state.token = data.value?.data?.token || null;
-        axios.defaults.headers.common['X-Authorization'] = `Bearer ${data.value?.data?.token}`;
+        axios.defaults.headers.Authorization = `Bearer ${data.value?.data?.token}`;
       }
 
       return { data, error, status };

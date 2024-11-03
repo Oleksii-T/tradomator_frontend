@@ -24,8 +24,6 @@ export default defineNuxtConfig({
     public: {
       API_URL: process.env.NUXT_PUBLIC_API_URL,
       API_URL_ROOT: process.env.NUXT_PUBLIC_API_URL_ROOT,
-      CENTRIFUGO_WEBSOCKET: process.env.CENTRIFUGO_WEBSOCKET,
-      API_DIAGNOSES: process.env.NUXT_PUBLIC_API_DIAGNOSES,
     },
   },
 

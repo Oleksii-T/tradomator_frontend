@@ -10,6 +10,7 @@
       )
     "
     :disabled="isDisabled"
+    type="button"
   >
     <template v-if="isLoading">
       <ReloadIcon class="w-4 h-4 mr-2 animate-spin" />

@@ -1,4 +1,11 @@
 {
+  // config for Python\Django
+  // required: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+
   // config for PHP\Laravel
   // required: https://marketplace.visualstudio.com/items?itemName=open-southeners.laravel-pint
   // P.S. see pint.json

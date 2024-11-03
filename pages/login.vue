@@ -3,10 +3,10 @@
     <section class="py-20 bg-blue-50">
       <div class="container mx-auto">
         <h2 class="text-3xl font-bold text-center">Login</h2>
-        <form class="mt-8 max-w-md mx-auto">
+        <form class="mt-8 max-w-md mx-auto" @submit.prevent="">
           <InputElement
-            v-model="formData.email"
-            :error="validationErrors?.email"
+            v-model="formData.username"
+            :error="validationErrors?.username"
             name="email"
             label="Email"
             placeholder="Email"
@@ -36,6 +36,7 @@ import { ApiStatusEnum } from '~/constants/api-statuses';
 import { useNotificationStore } from '~/store/notification';
 import { handleApiError } from '~/helpers/handleApiError';
 import type { ILoginFormData } from '~/types/auth-types.ts';
+import type { AxiosErrors } from '~/types/axios-types';
 
 useSeoMeta({
   title: 'Staff | Login',
@@ -44,15 +45,14 @@ useSeoMeta({
 const userStore = useUserStore();
 const router = useRouter();
 const notificationStore = useNotificationStore();
-const { $api } = useNuxtApp();
-const formData = ref<Credentials>({});
+const formData = ref<ILoginFormData>({} as ILoginFormData);
 const validationErrors = ref<AxiosErrors>({});
 const isLoading = ref<boolean>(false);
 
 const login = async () => {
   isLoading.value = true;
 
-  const { data, status, error } = await $api.auth.login(formData.value);
+  const { status, error } = await userStore.verifiedStaff(formData.value);
 
   if (status.value === ApiStatusEnum.SUCCESS) {
     await notificationStore.success('Welcome to Tradomator Platform');

@@ -7,14 +7,17 @@ export default defineNuxtPlugin(nuxtApp => {
   const notification = useNotificationStore();
   const config = useRuntimeConfig();
 
+  const headers = {
+    Accept: 'application/json',
+  };
+
+  if (userStore.token) {
+    headers.Authorization = `Bearer ${userStore.token}`;
+  }
+
   let axiosInstance = axios.create({
     baseURL: config.public.API_URL as string,
-    headers: {
-      Accept: 'application/json',
-      common: {
-        'X-Authorization': `Bearer ${userStore.token}`,
-      },
-    },
+    headers,
   });
 
   axiosInstance.interceptors.response.use(
@@ -22,9 +25,7 @@ export default defineNuxtPlugin(nuxtApp => {
       return response;
     },
     error => {
-      // console.log(error);
-
-      // Если токен протух и это не запрос на обновление токена
+      // token expired and it is not refresh token request - naviagate to login
       if (error.response.status === 401) {
         notification.error('Sorry your session has ended, please log in again and continue working.');
         userStore.$reset();

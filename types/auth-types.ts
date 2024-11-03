@@ -1,8 +1,16 @@
 import type { UserResource } from '~/types/resources';
 
+export interface IUserStore {
+  id?: string | null;
+  first_name: string | null;
+  last_name: string | null;
+  email: string | null;
+  token: string | null;
+}
+
 export interface ILoginFormData {
+  username: string;
   password: string;
-  email: string;
 }
 
 export interface ILoginResponse {
