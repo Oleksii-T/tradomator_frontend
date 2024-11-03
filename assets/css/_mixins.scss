@@ -1,0 +1,66 @@
+@import "variables";
+
+//Texts
+@mixin h1-special {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+@mixin h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+@mixin h2-special {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+@mixin h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@mixin h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+@mixin h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@mixin h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@mixin p1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+@mixin p2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+@mixin p3 {
+  font-size: 18px;
+  font-weight: 400;
+}
+@mixin p4 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@mixin p5 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@mixin transition {
+  transition: all 250ms linear;
+}
+
+

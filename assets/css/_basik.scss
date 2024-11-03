@@ -1,0 +1,121 @@
+@import "variables";
+@import "mixins";
+
+* {
+  font-family: $font-family !important;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $txt;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 16px;
+  background: linear-gradient(180deg, #F0F2FA 0%, #E0E4F6 100%);
+
+}
+
+.h1-special {
+  @include h1-special;
+}
+
+.h1 {
+  @include h1;
+}
+
+.h2-special {
+  @include h2-special;
+}
+
+.h2 {
+  @include h2;
+}
+
+.h3 {
+  @include h3;
+}
+
+.h4 {
+  @include h4;
+}
+
+.h5 {
+  @include h5;
+}
+
+.p1 {
+  @include p1;
+}
+
+.p2 {
+  @include p2;
+}
+
+.p3 {
+  @include p3;
+}
+.p4 {
+  @include p4;
+}
+.p5 {
+  @include p5;
+}
+
+.styled-link {
+  @include p3;
+  text-decoration-line: none;
+}
+
+a {
+  @include p3;
+  color: $main;
+  text-decoration-line: none;
+}
+
+.custom-scrollbar {
+  overflow-y: auto;
+  transition: scroll-behavior 0.5s ease-in-out;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #E6EAF9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #AAB1CC;
+  border-radius: 0.25rem;
+}
+
+input::placeholder {
+  color: $text-gray;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(106, 105, 163, 0.45);
+}
+
+.home-page {
+  background-image: url('../images/drag1.svg'), url('../images/drag2.svg'), url('../images/drag3.svg'), url('../images/drag4.svg');
+  background-position: top 20% right , top left 20%, bottom 15% left 20%, bottom 10% right 30%;
+  background-repeat: no-repeat;
+}
+
+.toggle-sidebar {
+  background-color: #fff;
+  position: absolute;
+  top: calc(50% - 6rem);
+  right: -10px;
+  height: 8rem;
+  border-radius: 0 5px 5px 0;
+  width: 1rem;
+}
+
+

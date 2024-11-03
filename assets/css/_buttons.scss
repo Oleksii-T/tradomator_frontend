@@ -1,0 +1,124 @@
+@import "variables";
+@import "mixins";
+
+
+
+.main-btn {
+  white-space: nowrap;
+  background-color: $main;
+  color: #fff;
+  border: 1px solid $main;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 48px;
+  @include transition;
+  .text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    @media screen and (min-width: 1280px) {
+      font-size: 16px;
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba(6, 36, 149, 1);
+    border-color: rgba(6, 36, 149, 1);
+    color: #fff;
+    & .text {
+      color: #fff;
+    }
+  }
+}
+
+.main-btn-small {
+  white-space: nowrap;
+  background-color: $main;
+  color: #fff;
+  border: 1px solid $main;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  @include transition;
+  .text {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    @media screen and (min-width: 1280px) {
+      font-size: 14px;
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba(6, 36, 149, 1);
+    border-color: rgba(6, 36, 149, 1);
+    color: #fff;
+    & .text {
+      color: #fff;
+    }
+  }
+}
+
+.second-btn {
+  white-space: nowrap;
+  background-color: #fff;
+  color: $main;
+  border: 1px solid $main;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 48px;
+  @include transition;
+  .text {
+    color: $main;
+    font-size: 18px;
+    font-weight: 500;
+    @media screen and (min-width: 1280px) {
+      font-size: 16px;
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba(128, 148, 223, 0.35);
+    border-color: $main;
+    color: $main;
+    & .text {
+      color: $main;
+    }
+  }
+}
+
+.second-btn-small {
+  white-space: nowrap;
+  background-color: #fff;
+  color: $main;
+  border: 1px solid $main;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  @include transition;
+  .text {
+    color: $main;
+    font-size: 16px;
+    font-weight: 500;
+    @media screen and (min-width: 1280px) {
+      font-size: 14px;
+    }
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba(128, 148, 223, 0.35);
+    border-color: $main;
+    color: $main;
+    & .text {
+      color: $main;
+    }
+  }
+}
+button:disabled {
+  background: rgba(170, 177, 204, 0.70) !important;
+  border: rgba(170, 177, 204, 0.70) !important;
+  color: #fff !important;
+  .text {
+    color: #fff !important;
+  }
+}
